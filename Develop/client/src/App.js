@@ -10,9 +10,14 @@ import {
   createHttpLink,
 } from '@apollo/client';
 
+const client = new ApolloClient({
+  uri: '/graphql',
+  cache: new InMemoryCache(),
+});
+
 function App() {
   return (
-    <ApolloProvider>
+    <ApolloProvider client= {client}>
       <Router>
         <>
           <Navbar />
